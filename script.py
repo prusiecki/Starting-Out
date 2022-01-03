@@ -1,14 +1,6 @@
-import sys
+import requests
 
-print(sys.version)
-print(sys.executable)
+r = requests.get("https://cmcmarkets.com")
 
-def greet(who_to_greet):
-    greeting = 'Hello, {}'.format(who_to_greet)
-    return greeting
-
-print(greet('Otto'))
-print(greet('Linda Mausi'))
-
-name = input("What is your name? ")
-print("Hello,", name)
+print(r.status_code)
+print(r.ok)
